@@ -9,7 +9,7 @@ because circom have limit on counting (limit around 2**252), so i had writted bi
 number had been mod with 2**126, so it will not be more than 2**252 if we muilt
 and after we verify the point we can verify if it is in merkle tree,and merkle tree's hasher i used keccak256
 
-這是用sepc256k這條橢圓曲線做的數字簽名，key 作為私鑰,(x,y)為key*g (g=基準點), 輸入2**(0~252)*g的點並驗證他在曲線上且x[i-1]*x[i-1]=x[i]
+這是用sepc256k這條橢圓曲線做的數字簽名，key 作為私鑰,(x,y)為key*g (g=基準點), 輸入2**(0~252) * g的點, 並驗證他在曲線上且x[i-1] + x[i-1] =x[i]
 輸入x252,y252並驗證他是2**(0~252)*g的點
 把key轉為2進制，key=2**a+2**b+2**c,所以計算出key**g不會超過252次(key<2**252)
 path表示驗證中的計算過程,若key=13,二進制為[1,0,1,1], path=[1*g,1*g,5*g,13*g], path的最後一項為(x,y)=key*g
