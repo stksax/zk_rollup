@@ -1,12 +1,12 @@
 # zk_rollup
 ecdsa in the cruve sepc256k, and the result sould in the merkle tree, it contains four parts:ecdsa,bigint,keccak,merkletree
 it used for verify the point(x,y) is in sepc256k1 cruve, key*g=(x,y) , g means the base point (g=x252[0],y252[0])
-if key is given, it can be verify in 252 round of count (key is in range of 1~2**252)
+if key is given, it can be verify in 252 round of count (key is in range of 1~2^252)
 first we check x252 and y252 is correct 
-and change the key to binary, so it can be 2**a + 2**b + 2**c 
+and change the key to binary, so it can be 2^a + 2^b + 2^c 
 path means every step we verify, if key = [1,0,1,1], path=[1,1,5,13], path[n-1] == x,y
 because circom have limit on counting (limit around 2**252), so i had writted bigint counting(bigadd, muilt, sud)
-number had been mod with 2**126, so it will not be more than 2**252 if we muilt
+number had been mod with 2^126, so it will not be more than 2**252 if we muilt
 and after we verify the point we can verify if it is in merkle tree,and merkle tree's hasher i used keccak256
 
 # bigint 
