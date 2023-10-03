@@ -1,5 +1,5 @@
 # zk_rollup
-ecdsa in the cruve sepc256k, and the result sould in the merkle tree, it contains four parts:ecdsa,bigint,keccak,merkletree
+ecdsa in the cruve sepc256k1 (y^2^=x^3^+7), and the result sould in the merkle tree, it contains four parts:ecdsa,bigint,keccak,merkletree
 it used for verify the point(x,y) is in sepc256k1 cruve, key*g=(x,y) , g means the base point (g=x252[0],y252[0])
 if key is given, it can be verify in 252 round of count (key is in range of 1~2^252^)
 first we check x252 and y252 is correct 
