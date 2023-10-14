@@ -2,7 +2,7 @@
 this circom project can do the transaction without let the bank knows your private key and packing serveal transcation to generate a new merkle tree that contain all the transactions inside. It's the idea about zero knowledge proof, user can do withdraw money, pay money to someone, and recive money from others. And each part they have to use their private key, so it's undeniable after doing the transcation.
 
 # babyjub_caculate
-I use babyjub to generate public key because that is friendly to circom > Text that is a quote
+I use babyjub to generate public key because that is friendly to circom $$private key * generater = public key $$
 # keccak256 
 that is hasher for merkle tree and digital envelope
 
