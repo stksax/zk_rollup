@@ -8,7 +8,7 @@ In transcation.circom, I had written three template (pay to someone, withdraw, r
 I use babyjub to generate public key because that is friendly to circom.In making signature, it contain the classic sigma protocol, but I add Diffie–Hellman key exchange in that(when generating challenge). 
 $$private\quad key * g (generater) = public\quad key  $$
 $$commitment= random\quad number * g  $$
-$$challenge=hash (sender's private key, reciver's public key, payment) (it's\quad Diffie–Hellman\quad key\quad exchange) $$
+$$challenge=hash (sender's\quad private\quad key, reciver's\quad public\quad key, payment) (it's\quad Diffie–Hellman\quad key\quad exchange) $$
 $$response=random\quad number + challenge*sender's\quad private\quad key  $$
 
 ## keccak256 
