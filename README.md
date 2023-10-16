@@ -8,19 +8,11 @@ In transcation.circom, I had written three template (pay to someone, withdraw, r
 I use babyjub to generate public key because that is friendly to circom.In making signature, it contain the classic sigma protocol, but I add Diffie–Hellman key exchange in that(when generating challenge). 
 <img src="instructions.png" alt="png">
 
-$$private\quad key * g (generater) = public\quad key  $$
-$$commitment= random\quad number * g  $$
-$$challenge=hash (sender's\quad private\quad key, reciver's\quad public\quad key, payment) (it's\quad Diffie–Hellman\quad key\quad exchange) $$
-$$response=random\quad number + challenge*sender's\quad private\quad key  $$
-
 ## keccak256 
-that is hasher for merkle tree and digital envelope
+that is hasher for merkle tree and makeing challenge, of course it can be changed to sha256 or others
 
-# merkle tree 
-It's a useful function for rollup the signature , if someone wants to proof his signature is one of the leaf of tree, beside the leaf, he needs to provide three things
-1. guide number(it will be change to binary to show the leaf and the father is on left or right)
-2. path element (the brothers in the tree)
-3. root
+## merkle tree 
+merkle tree's leaf is for private key and balance do the hash, it contain prevent double spend (there will not be two smae leaf in the same time),and collecting all the new leafs to generate a new root to finish rollup.
 
 
 
