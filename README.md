@@ -7,7 +7,7 @@ If user wants to trade, he need to enter his public key ,a message ,public key a
 Detail in `zk_rollup.circom`
 
 # test
-I wrote two test, one is simulation all the situaction can happen in trade, the other (test2) is use the two list(receipt of transcation) to generate new leaf of merkle tree. The first one contain normal trade, someone enter the wrong information, doing transcation without enough balance, someone want to cheat about his account balance, withdraw and save money.The second test I input the reciept list that was made in the last test, and check if the leaf is as our expect. 
+I wrote two test, one is simulation all the situation can happen in trade, the other (test2) is use the two list(receipt of transaction) to generate new leaf of merkle tree. The first one contain normal trade, someone enter the wrong information, doing transaction without enough balance, someone want to cheat about his account balance, withdraw and save money.The second test I input the receipt list that was made in the last test, and check if the leaf is as our expect. 
 
 ## merkle tree 
 merkle tree's leaf is from public key and balance do the hash, I use poseidon to do the hash 
