@@ -1,13 +1,11 @@
 # zk_rollup
 this circom project can do the transaction without let others knows your private key and packing several transaction to generate new merkle tree leaf that contain user public key and current balance. It's the idea about zero knowledge proof, user can withdraw money, pay money to someone, and receive money from others.
 
-# how to do the transaction
-It can do three kinds of transactions: pay to someone, withdraw, and receive. If you want to pay money to someone, you have to enter your private key and balance for proving your account is in merkle tree(this make the transaction undeniable for you and bank), check payment is less than balance, and use your public key and a random number to do a sigma protocol, and it contain Diffie–Hellman key exchange inside, so your payment is undeniable to receiver(because he have to use your public key to generate Diffie–Hellman key, and use Diffie–Hellman key to solve sigma protocol). When we talk about withdraw, that is almost the same as pay, but you don't have to make the sigma protocol. As a receiver, beside proof your account is in merkle tree as before, you have to use your private key and sender's public key for making Diffie–Hellman key, in order to verify who pay money to you and how much, so the identity of two traders and the payment are clear, after you do any transcation, you should update merkle leaf. 
-Finally we will collect all the transactions to create a new merkle root.
+# how the transaction work
+If user wants to trade, he need to enter his public key ,a message ,public key and message will be use for generate random number and his signature (I chose eddsaposeidon for verify the four thing).The message contain what kind of trade he want to do (withdraw, pay, save), your account's location in merkle tree and balance , how much you want to pay, and who will receive the payment. And it will generate two list, who get the money and who spend it, if all information is correct, the pay ment will be add inside, if is invalid, the payment will show zero.
 
-## babyjub_calculate
-I use babyjub to generate public key because that is friendly to circom. In making signature, it contain the classic sigma protocol, but I add Diffie–Hellman key exchange in that(when generating challenge). 
-<img src="instructions.png" alt="png">
+# test
+I wrote two test, one is simulation all the situaction can happen in trade, the other (test2) is use the two list(receipt of transcation) to generate new leaf of merkle tree. 
 
 ## keccak256 
 that is hasher for merkle tree and making challenge, of course it can be changed to sha256 or others
