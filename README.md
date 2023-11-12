@@ -16,5 +16,5 @@ after we do the test1, we got a list that record the sender balance left, and th
 run `mocha -p -r ts-node/register 'test2.js'`
 
 ## merkle tree 
-merkle tree's leaf is from public key and balance do the hash, I use poseidon to do the hash 
+merkle tree's leaf can generate a root that contain all the account and it's balance inside, merkle tree's leaf is generate from public key and balance, I use poseidon to do the hash, so we just need to give the location of account, his bother leaf, root. We can know is it correct or not in a fast way.
 
