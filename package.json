@@ -1,0 +1,26 @@
+{
+    "name": "zk-rollup",
+    "version": "0.0.1",
+    "description": "use eddsa verify and do the rollup in circom",
+    "main": "index.js",
+    "scripts": {
+      "test1": "mocha -p -r ts-node/register 'test1.js'",
+      "test2": "mocha -p -r ts-node/register 'test2.js'"
+    },
+    "repository": "git@github.com:stksax/zk_rollup.git",
+    "author": "su ting kuan",
+    "license": "ISC",
+    "dependencies": {
+      "circomlib": "^2.1.5",
+      "ethers": "^5.5.2",
+      "snarkjs": "^0.4.10"
+    },
+    "devDependencies": {
+      "chai": "^4.3.4",
+      "circom_tester": "0.0.13",
+      "circomlibjs": "^0.1.4",
+      "mocha": "^9.1.3",
+      "ts-node": "^10.4.0",
+      "typescript": "^4.5.4"
+    }
+  }
