@@ -8,8 +8,7 @@ Detail in `zk_rollup.circom`
 
 # test1
 this test is for verify the signature, and generate a UTXO result (Unspent Transaction* Output), that contain the sender's balance after transaction, and transfer for reciever, if balance isn't enough or someone forgery, the transcation will not success  
-I simulation all the situation can happen in trade
-1. w
+I simulation all the situation can happen in trade, transfer to other, deposie, withdraw, and if someone transfer without enough balance 
 
 ## merkle tree 
 merkle tree's leaf is from public key and balance do the hash, I use poseidon to do the hash 
