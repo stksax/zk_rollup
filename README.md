@@ -9,6 +9,11 @@ Detail in `zk_rollup.circom`
 # test1
 this test is for verify the signature, and generate a UTXO result (Unspent Transaction* Output), that contain the sender's balance after transaction, and transfer for reciever, if balance isn't enough or someone forgery, the transcation will not success  
 I simulation all the situation can happen in trade, transfer to other, deposie, withdraw, and if someone transfer without enough balance 
+run `mocha -p -r ts-node/register 'test1.js'`
+
+# test2
+after we do the test1, we got a list that record the sender balance left, and the transfer reciever get, then we take the two list to generate a new merkle tree root to finish rollup, I also calaulate the new merkle tree leaf in another way to see if the result is as my expect, but it doenn't exsist in the real project.
+run `mocha -p -r ts-node/register 'test2.js'`
 
 ## merkle tree 
 merkle tree's leaf is from public key and balance do the hash, I use poseidon to do the hash 
