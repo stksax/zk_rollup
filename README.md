@@ -7,6 +7,19 @@ If user wants to trade, he need to enter his public key ,a message ,public key a
 
 Detail in `zk_rollup.circom`
 
+# get started
+install your npm package
+
+````npm i````
+
+install mocha
+
+````npm i -g mocha````
+
+````npm run test1````
+
+````npm run test2````
+
 # test1
 
 this test is for verify the signature, and generate a account tree, that contain the sender's balance after transaction, and transfer for reciever, if balance isn't enough or someone forgery, the transcation will not success  
