@@ -16,6 +16,8 @@ install mocha
 
 ````npm i -g mocha````
 
+run the test
+
 ````npm run test1````
 
 ````npm run test2````
