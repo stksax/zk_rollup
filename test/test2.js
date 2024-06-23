@@ -7,7 +7,7 @@ const buildBabyjub = require("circomlibjs").buildBabyjub;
 
 const assert = chai.assert;
 
-describe("after verify the transactions, use the result to rollup the new merkle leaf in UTXO way", function () {
+describe("after verify the transactions, use the result as new merkle tree leaf, and rollup a new root", function () {
     let circuit;
     let eddsa;
     let babyJub;
